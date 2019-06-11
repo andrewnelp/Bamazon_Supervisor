@@ -85,7 +85,7 @@ const createDep = () => {
       connection.query(query, [answer.name, answer.costs], (err, res) => {
         if (err) throw err;
         console.log('===============================================================================================');
-        console.log(res.affectedRows + " department added!\n");
+        console.log(res.affectedRows + " department added!");
         console.log('===============================================================================================');
         runSearch();
 
