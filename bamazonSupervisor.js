@@ -39,7 +39,7 @@ const runSearch = () => {
           break;
 
         case "Create New Department":
-          // multiSearch();
+          // createDep();
           break;
       }
     });
@@ -52,11 +52,19 @@ const viewProductsByDep = () =>{
   connection.query(query, (err, res) =>{
     if(err) throw err;
     console.log(`=====================================================================`)
-    console.log(`Department ID || Department Name  || Overhead Costs || Product Sales`);
+    console.log(`Department ID || Department Name  || Overhead Costs || Product Sales || Profit`);
+    
     res.forEach(r => {
-      console.log(`    ${r.department_id}         ||      ${r.department_name}     ||      ${r.over_head_costs}       ||${r.product_sales}`);
+      let profit = r.product_sales - r.over_head_costs;
+      console.log(`    ${r.department_id}         ||      ${r.department_name}     ||      ${r.over_head_costs}       ||${r.product_sales}          ||  ${profit}`);
     })
     console.log(`=====================================================================`)
-    connection.end();
+    // connection.end();
+    runSearch();
+
   })
 };
+
+// const createDep = () => {
+  
+// }
