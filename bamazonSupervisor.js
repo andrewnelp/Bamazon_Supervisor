@@ -17,7 +17,6 @@ let connection = mysql.createConnection({
 connection.connect(err => {
   if (err) throw err;
   console.log(`connected as id ${connection.threadId}`);
-  // run the start function after the connection is made to prompt the user
   runSearch();
 });
 
