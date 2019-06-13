@@ -59,7 +59,7 @@ const viewProductsByDep = () => {
       console.log(`    ${r.department_id}         ||      ${r.department_name}     ||      ${r.over_head_costs}       ||${r.product_sales}          ||  ${profit}`);
     })
     console.log(`===============================================================================`)
-    connection.end();
+    // connection.end();
     runSearch();
 
   })
@@ -87,7 +87,6 @@ const createDep = () => {
         console.log(res.affectedRows + " department added!");
         console.log('===============================================================================================');
         runSearch();
-
       })
     })
 }
